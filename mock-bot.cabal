@@ -1,0 +1,78 @@
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 34b93ee80c8007dd2fcd9a23e32fd18144e58465e6678803fd04fa904304025c
+
+name:           mock-bot
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/willGuimont/mock-bot#readme>
+homepage:       https://github.com/willGuimont/mock-bot#readme
+bug-reports:    https://github.com/willGuimont/mock-bot/issues
+author:         William Guimont-Martin
+maintainer:     william.guimont-martin.1@ulaval.ca
+copyright:      2020 William Guimont-Martin
+license:        BSD3
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/willGuimont/mock-bot
+
+library
+  exposed-modules:
+      Lib
+  other-modules:
+      Paths_mock_bot
+  hs-source-dirs:
+      src
+  default-extensions: OverloadedStrings
+  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wreduntant-constraints
+  build-depends:
+      base >=4.7 && <5
+    , discord-haskell
+    , emoji
+    , random
+    , text
+  default-language: Haskell2010
+
+executable mock-bot-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_mock_bot
+  hs-source-dirs:
+      app
+  default-extensions: OverloadedStrings
+  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wreduntant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , discord-haskell
+    , emoji
+    , mock-bot
+    , random
+    , text
+  default-language: Haskell2010
+
+test-suite mock-bot-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_mock_bot
+  hs-source-dirs:
+      test
+  default-extensions: OverloadedStrings
+  ghc-options: -Wall -Wcompat -Wincomplete-record-updates -Wincomplete-uni-patterns -Wreduntant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , discord-haskell
+    , emoji
+    , mock-bot
+    , random
+    , text
+  default-language: Haskell2010
